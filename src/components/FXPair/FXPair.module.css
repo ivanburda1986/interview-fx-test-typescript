@@ -15,14 +15,14 @@
   font-weight: 600;
 }
 
-.CurrencyCode {
+.currencyCode {
   display: inline-block;
   width: 20%;
   margin-right: auto;
   text-align: center;
 }
 
-.CurrencyName {
+.currencyName {
   width: 40%;
   margin-right: auto;
   text-align: start;
@@ -36,7 +36,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .CurrencyName {
+  .currencyName {
     display: none;
   }
 }

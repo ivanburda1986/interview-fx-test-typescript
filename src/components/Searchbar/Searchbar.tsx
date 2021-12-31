@@ -2,8 +2,9 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { AppContext } from "../../context/context";
 import styles from "./Searchbar.module.css";
+import { FaGithub } from "react-icons/fa";
 
-export const Searchbar = () => {
+export const Searchbar: React.FC = () => {
   const location = useLocation();
   const context = React.useContext(AppContext);
   const searchStringRef = React.useRef<HTMLInputElement>(null);
@@ -26,8 +27,8 @@ export const Searchbar = () => {
           <label htmlFor="searchbar">Search</label>
           <input type="text" id="searchbar" placeholder="Currency code or name" value={context.filterValue} ref={searchStringRef} onChange={handleSearch} />
         </div>
-        <a href="https://github.com/ivanburda1986/interview-fx-test" target="_blank" rel="noreferrer">
-          <i className="fab fa-github"></i>
+        <a href="https://github.com/ivanburda1986/interview-fx-test-typescript" target="_blank" rel="noreferrer">
+          <FaGithub />
         </a>
       </div>
     </div>
