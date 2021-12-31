@@ -5,7 +5,7 @@ import { AppContext } from "../../context/context";
 import { FXPairInterface } from "./types";
 import { filterFXByCodeAndName, validateFXPairs } from "./index";
 import { FXPair } from "../FXPair";
-import classes from "./FXPairsList.module.css";
+import styles from "./FXPairsList.module.css";
 
 export const FXPairsList = () => {
   const filterValue = React.useContext(AppContext).filterValue;
@@ -29,20 +29,19 @@ export const FXPairsList = () => {
 
   React.useEffect(() => {
     const filteringResult = filterFXByCodeAndName({ fxPairs, filterValue });
-    let streamlined = filteringResult.map((piece: any) => ({ name: piece.nameI18N, currency: piece.currency, exchangeRate: piece.exchangeRate.middle }));
     setFilteredFxPairs(filteringResult);
   }, [fxPairs, filterValue]);
 
   if (!fxPairsLoadingFinished) {
-    return <p>Loading...</p>;
+    return <p className={styles.message}>Loading...</p>;
   }
 
   if (!filteredFxPairs.length) {
-    return <p>I'm sorry. I do not recognize the currency you are searching for.</p>;
+    return <p className={styles.message}>I'm sorry. I do not recognize the currency you are searching for.</p>;
   }
 
   return (
-    <div className={classes.FXPairs}>
+    <div className={styles.FXPairs}>
       {filteredFxPairs.map((fxPair) => (
         <FXPair currency={fxPair.currency} nameI18N={fxPair.nameI18N} exchangeRate={fxPair.exchangeRate} key={fxPair.currency} />
       ))}

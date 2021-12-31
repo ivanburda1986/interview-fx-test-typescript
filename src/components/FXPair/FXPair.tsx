@@ -27,7 +27,7 @@ export const FXPair: React.FC<FXPairInterface> = (props) => {
       <img src={flagImgSrc} alt={imgAlt} />
       <p className={styles.CurrencyCode}>{currency}</p>
       <p className={styles.CurrencyName}>{nameI18N}</p>
-      <p className={styles.fXRate}>{exchangeRate.middle} / € </p>
+      <p className={styles.fXRate}>{exchangeRate.middle.toFixed(2)} / € </p>
     </div>
   );
 };
