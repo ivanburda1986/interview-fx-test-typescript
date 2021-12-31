@@ -1,0 +1,42 @@
+.FXPair {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  margin-bottom: 0.5em;
+  width: 85%;
+  max-width: 750px;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.CurrencyCode {
+  display: inline-block;
+  width: 20%;
+  margin-right: auto;
+  text-align: center;
+}
+
+.CurrencyName {
+  width: 40%;
+  margin-right: auto;
+  text-align: start;
+  padding: 0 1em;
+}
+
+.fXRate {
+  width: 40%;
+  margin-left: auto;
+  text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  .CurrencyName {
+    display: none;
+  }
+}
