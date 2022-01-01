@@ -1,5 +1,4 @@
-import { validateFXPairs } from "../fxPairs";
-import { filterFXByCodeAndName } from "../../components/FXPairsList/index";
+import { filterFXByCodeAndName, validateFXPairs } from "../components/FXPairsList/FXPairsListService";
 import validFXPairsMocked from "./fxPairs-validated-mock.json";
 import FX from "./fxPairs-validated-named";
 
