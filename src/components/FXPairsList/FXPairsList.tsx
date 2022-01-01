@@ -13,11 +13,11 @@ export const FXPairsList = () => {
   const [fxPairsLoadingFinished, setFxPairsLoadingFinished] = React.useState<boolean>(false);
   const [filteredFxPairs, setFilteredFxPairs] = React.useState<FXPairInterface[]>([]);
 
+  //Load initial FX data
   React.useEffect(() => {
     loadServerFXPairs()
       .then((data) => {
-        let validated = validateFXPairs(data.fx);
-        setFxPairs(validated);
+        setFxPairs(validateFXPairs(data.fx));
         setFxPairsLoadingFinished(true);
       })
       .catch(({ message }) => {
@@ -27,9 +27,9 @@ export const FXPairsList = () => {
       });
   }, []);
 
+  //Trigger filtering
   React.useEffect(() => {
-    const filteringResult = filterFXByCodeAndName({ fxPairs, filterValue });
-    setFilteredFxPairs(filteringResult);
+    setFilteredFxPairs(filterFXByCodeAndName({ fxPairs, filterValue }));
   }, [fxPairs, filterValue]);
 
   if (!fxPairsLoadingFinished) {
