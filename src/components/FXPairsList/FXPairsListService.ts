@@ -1,7 +1,7 @@
 import { FilterPairsInputInterface } from "./types";
 
 export const filterFXByCodeAndName = ({ fxPairs, filterValue }: FilterPairsInputInterface) => {
-  const trimmedFilterValue = filterValue.replace(/\s+/g, "");
+  const trimmedFilterValue = filterValue.replace(/\s+/g, "").toLowerCase();
   return fxPairs.filter((fxPair) => {
     const currencyCode = fxPair.currency.toLowerCase();
     const currencyNameIndividualWords = fxPair.nameI18N.toLowerCase().split(" ");

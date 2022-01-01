@@ -10,7 +10,7 @@ export const Searchbar: React.FC = () => {
   const searchStringRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    const filterValue = decodeURIComponent(location.hash).replace(/#/gi, "").toLowerCase();
+    const filterValue = decodeURIComponent(location.hash).replace(/#/gi, "");
     context.setFilterValueHandler(filterValue);
   }, [location.hash]);
 
